@@ -1,41 +1,23 @@
-html {
-  /*height: 100%;
-  width: 100%;*/
-}
+/* --Typography--*/
 
-@font-face {
-  font-family: SunMoon;
-  src: url(images/fonts/font_SM.ttf);
-}
+@font-face { font-family: SunMoon; src: url(images/fonts/font_SM.ttf); }
+@font-face { font-family: Ubuntu;  src: url(images/fonts/Ubuntu-Regular.ttf); }
 
-@font-face {
-  font-family: Ubuntu;
-  src: url(images/fonts/Ubuntu-Regular.ttf);
-}
+/* --General Styling--*/
 
-body {
-  background-color: #DDDDDD;
-  font-family: Ubuntu; font-style: italic;
-}
+html {}
+body { background-color: #DDDDDD; font-family: Ubuntu; font-style: italic; }
+h1 { font-family: SunMoon; line-height: 120%; }
 
-.header img {
-  float: left;
-}
+/* --Header--*/
 
-.header h1 {
-  position: relative; top: 15px; left: 15px;
-  font-family: SunMoon; line-height: 120%;
-}
-
-.header h4 {
-  position: relative; left: 10px;
-}
+.header img { float: left; }
+.header h1 { position: relative; top: 15px; left: 15px; }
+.header h4 { position: relative; left: 10px; }
 
 .header span {
   text-decoration: underline;
-  transition: color .5s;
-}
+  transition: color .5s; }
+.header span:hover { color: #de2424; }
 
-.header span:hover {
-  color: #de2424;
-}
+/* --Annexer-- */
