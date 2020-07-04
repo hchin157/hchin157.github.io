@@ -2,7 +2,13 @@ let entry_template = `
   <h3></h3>
   <p></p>
 `
-let entry_list = document.querySelector('[id=dex]');
+let entry_list = document.querySelector('.dex');
+
+let form = document.querySelector(".annex");
+form.addEventListener('submit', (event) => {
+  event.preventDefault();
+  adder();
+})
 
 let adder = function() {
   const input = document.querySelector('[id=species]');
@@ -17,8 +23,7 @@ let adder = function() {
   entry_list.appendChild(entry);
 }
 
-let form = document.querySelector("[id=party]");
-form.addEventListener('submit', (event) => {
-  event.preventDefault();
-  adder();
-})
+
+let loadDex = function() {
+  console.log("Loaded!");
+}

@@ -6,17 +6,20 @@
     <meta charset="utf-8"/>
   </head>
 
-  <body>
+  <body onload = "loadDex()">
     <div class="header">
       <img src="images/icons/pokeball.png" alt="alternatetext">
       <!-- /images/name.gif-->
       <h1> Dungeons and Dragons <br> PokéHelper </h1>
-      <h4> This tool stores information about your <span>current companions.</span> It will also list all the Pokemon you have in the <span>PC.</span> </h5>
+      <h4> This tool stores information about your
+        <span>current companions.</span>
+        It will also list all the Pokemon you have in the
+        <span>PC.</span> </h4>
     </div>
 
     <div class='annexer'>
       <!-- The form to add Pokemon to the party -->
-      <form id='party'>
+      <form class='annex'>
         <label for='species'> Species </label>
         <select id='species' name="species" >
           <option value="egg"> Egg </option>
@@ -26,7 +29,7 @@
       </form>
     </div>
 
-    <div id='dex'>
+    <div class='dex'>
       <h2> Current Pokemon </h2>
       <!-- This is where all the user's party Pokemon will be added. -->
     </div>
