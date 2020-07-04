@@ -15,8 +15,7 @@ html {
 
 body {
   background-color: #DDDDDD;
-  font-family: Ubuntu;
-  font-style: italic;
+  font-family: Ubuntu; font-style: italic;
 }
 
 .header img {
@@ -24,17 +23,12 @@ body {
 }
 
 .header h1 {
-  position: relative;
-  top: 15px;
-  left: 15px;
-
-  font-family: SunMoon;
-  line-height: 120%
+  position: relative; top: 15px; left: 15px;
+  font-family: SunMoon; line-height: 120%;
 }
 
 .header h4 {
-  position: relative;
-  left: 10px;
+  position: relative; left: 10px;
 }
 
 .header span {
