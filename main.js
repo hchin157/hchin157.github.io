@@ -1,6 +1,7 @@
 let entry_template = `
   <h3></h3>
   <p></p>
+  <img></img>
 `
 let entry_list = document.querySelector('.dex');
 
@@ -14,11 +15,13 @@ let adder = function() {
   const input = document.querySelector('[id=species]');
 
   let entry = document.createElement("div");
-  entry.setAttribute("class", "temp");
+  entry.setAttribute("class", "companion");
   entry.innerHTML = entry_template;
 
   entry.querySelector("h3").innerText = input.value;
-  entry.querySelector("p").innerText = "This is a breakfast food.";
+  entry.querySelector("p").innerText = "";
+  entry.querySelector("img").src = "images/sprites_full/"+ input.value + ".gif";
+  entry.querySelector("img").setAttribute("class", "portrait");
 
   entry_list.appendChild(entry);
 }
