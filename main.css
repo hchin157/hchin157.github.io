@@ -5,10 +5,11 @@
 
 /* --General Styling--*/
 
-html {}
-body { background-color: #dddddd; font-family: Ubuntu;}
+html { width: 100%; }
+body { background-color: #ddd; font-family: Ubuntu;
+       box-sizing: border-box;}
 h1 { font-family: SunMoon; line-height: 120%; }
-img.portrait { width: 100px; height: auto; image-rendering: pixelated;}
+label { font-weight: bold; }
 
 /* --Header--*/
 
@@ -24,18 +25,34 @@ img.portrait { width: 100px; height: auto; image-rendering: pixelated;}
 
 /* --Annexer-- */
 
-label { font-weight: bold; }
 div.annexer {
-  background-color: #ffffff;
-  padding: 5px;
   border-radius: 10px;
-  margin: 10px;
+  background-color: #fff;
+  padding: 5px;  margin: 10px;
   box-shadow: 0px 5px 10px rgba(0,0,0,.3) , 0px 8px 20px rgba(0,0,0,.2);
 }
 form.annex {
+  border-radius: 5px;
   background-color: inherit;
   padding: 10px;
-  border-radius: 5px;
+}
+select {
+  border: 0; border-radius: 5px;
+  font-size: 14px; font-family: Ubuntu;
+  padding: 3px; margin: 10px;
+  box-shadow:  inset 0px 1px 4px rgba(0,0,0,.4);
+}
+input[type=submit] {
+  border: 0; border-radius: 4px;
+  font-size: 20px; font-family: Ubuntu;
+  background-color: #4AAD50; color: white;
+  padding: 7px 10px;  margin: 8px 0;
+  cursor: pointer;
 }
 
 /* --"Dex"-- */
+
+img.portrait {
+  width: 100px; height: auto;
+  image-rendering: pixelated;
+}
