@@ -6,7 +6,8 @@
     <meta charset="utf-8"/>
   </head>
 
-  <body onload = "loadDex()">
+  <body>
+
     <div class="header">
       <img src="images/icons/pokeball.png" alt="alternatetext">
       <!-- /images/name.gif-->
@@ -22,9 +23,10 @@
       <form class='annex'>
         <label for='species'> Species </label>
         <select id='species' name="species" >
-          <option value="1"> Chespin </option>
-          <option value="2"> Fennekin </option>
-          <option value="3"> Froakie </option>
+          <option selected disabled>Select a species</option>
+        </select>
+        <label for='rank'> Rank </label>
+        <select id='rank' name='rank' >
         </select>
         <input  type="submit" value="Submit">
       </form>
@@ -35,7 +37,6 @@
       <!-- This is where all the user's party Pokemon will be added. -->
     </div>
 
-
-    <script src="main.js"></script>
+    <script src="bundle.js"></script>
   </body>
 </html>
