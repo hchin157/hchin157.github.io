@@ -1,0 +1,22 @@
+{
+  "full_species_list":[
+      {"name": "Bulbasaur"},
+      {"name": "Ivysaur"},
+      {"name": "Venusaur"},
+      {"name": "Charmander"},
+      {"name": "Charmeleon"},
+      {"name": "Charizard"},
+      {"name": "Squirtle"},
+      {"name": "Wartortle"},
+      {"name": "Blastoise"},
+      {"name": "Chespin"},
+      {"name": "Quilladin"},
+      {"name": "Chesnaught"},
+      {"name": "Fennekin"},
+      {"name": "Braixen"},
+      {"name": "Delphox"},
+      {"name": "Froakie"},
+      {"name": "Frogadier"},
+      {"name": "Greninja"},
+  ]
+}
