@@ -85,7 +85,8 @@ input[type="submit"]:active {
   box-shadow: inset 0px 0px 12px var(--shadow);
 }
 input[type='submit']:disabled {
-  background-color: #bbbbbb;
+  background-color: #ddd;
+  cursor: default;
 }
 
 /* --"Dex"-- */
