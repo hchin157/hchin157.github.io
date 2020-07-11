@@ -1,6 +1,8 @@
+/* Data is stored in data.json */
 var alldata = require('./data.json')
 const full_list = alldata.full_species_list
 
+/* Add entries to the "dex" div element.*/
 let entry_template = `
   <h3></h3>
   <p></p>
@@ -8,15 +10,28 @@ let entry_template = `
 `
 let entry_list = document.querySelector('.dex');
 
-let form = document.querySelector(".annex");
-form.addEventListener('submit', (event) => {
-  event.preventDefault();
-  adder();
+const select = document.getElementById('species')
+const submit = document.querySelector("[type='submit']")
+const form = document.querySelector(".annex");
+
+select.addEventListener('click', (event) => {
+  checker(select, submit);
 })
 
-let adder = function() {
-  const input = document.querySelector('#species');
+let checker = function(input, submit) {
+  const indexer = input.selectedIndex
+  if (indexer != 0) {
+    submit.disabled = false
+  }
+}
 
+form.addEventListener('submit', (event) => {
+  event.preventDefault();
+  adder(select);
+  resetter(select, submit);
+})
+
+let adder = function(input) {
   let entry = document.createElement("div");
   entry.setAttribute("class", "entry");
   entry.innerHTML = entry_template;
@@ -29,7 +44,14 @@ let adder = function() {
   entry_list.appendChild(entry);
 }
 
-function loadDex(list) {
+let resetter = function(input, submit) {
+  input[0].selected = true
+  submit.disabled = true
+  document.getElementById("rank")[0].selected = true //selects rank 1 on reset.
+}
+
+/* On window load, the select elements in the annex form will get filled. */
+let loadDex = function(list) {
   console.log("Loaded!");
 
   list.forEach((pokemon) => {
@@ -40,8 +62,9 @@ function loadDex(list) {
   });
 }
 
-function loadRank(){
+let loadRank = function() {
   console.log("Also loaded!");
+
   let ranker = document.querySelector("[id='rank']")
   var i;
   for (i = 0; i < 10; i++) {
