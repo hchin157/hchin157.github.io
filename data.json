@@ -1,6 +1,4 @@
-{
-  "full_species_list":[
-      {"name": "Bulbasaur"},
+{"full_species_list":[{"name": "Bulbasaur"},
       {"name": "Ivysaur"},
       {"name": "Venusaur"},
       {"name": "Charmander"},
@@ -66,7 +64,7 @@
       {"name": "Wormadam"},
       {"name": "Mothim"},
       {"name": "Wurmple"},
-      {"name": "Cascoon"},
+      {"name": "Silcoon"},
       {"name": "Beautifly"},
       {"name": "Cascoon"},
       {"name": "Dustox"},
@@ -182,6 +180,7 @@
       {"name": "Umbreon"},
       {"name": "Leafeon"},
       {"name": "Glaceon"},
+      {"name": "Sylveon"},
       {"name": "Swablu"},
       {"name": "Altaria"},
       {"name": "Togepi"},
@@ -196,6 +195,7 @@
       {"name": "Tangrowth"},
       {"name": "Yanma"},
       {"name": "Yanmega"},
+      {"name": "Tropius"},
       {"name": "Rhyhorn"},
       {"name": "Rhydon"},
       {"name": "Rhyperior"},
