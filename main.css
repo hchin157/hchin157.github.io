@@ -63,6 +63,9 @@ form.annex {
     "select1" "select2" "add"
     ;*/
 }
+.hidden {
+  display: none;
+}
 select {
   border: 0; border-radius: 5px;
   font-size: 14px; font-family: Ubuntu;

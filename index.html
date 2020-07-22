@@ -21,12 +21,15 @@
     <div class='annexer'>
       <!-- The form to add Pokemon to the party -->
       <form class='annex'>
-        <label for='species'> Species </label>
+            <label for='species'> Species </label>
         <select id='species' name="species" >
           <option selected disabled>Select a species</option>
         </select>
-        <label for='rank'> Rank </label>
-        <select id='rank' name='rank' >
+            <label class='hidden' for='rank'> Rank </label>
+        <select class='hidden' id='rank' name='rank' >
+        </select>
+            <label class='hidden' for='gender'> Gender </label>
+        <select class='hidden' id='gender' name='gender'>
         </select>
         <input disabled type="submit" value="Submit">
       </form>
