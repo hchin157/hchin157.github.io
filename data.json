@@ -1,4 +1,6 @@
-{"full_species_list":[{"name": "Bulbasaur"},
+{
+  "full_species_list":[
+      {"name": "Bulbasaur"},
       {"name": "Ivysaur"},
       {"name": "Venusaur"},
       {"name": "Charmander"},

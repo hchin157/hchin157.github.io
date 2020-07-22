@@ -54,12 +54,23 @@ let adder = function(input, input2) { //adds a Pokemon to the dex, and the party
   entry.querySelector("h3").innerText = "#"+input.selectedIndex;
   entry.querySelector("h4").innerText = "Rank: "+input2.value;
   entry.querySelector("p").innerText = input.value;
-  entry.querySelector("img").src = "images/sprites_full/"+ input.value + ".gif";
+  entry.querySelector("img").src = "images/sprites_full/" + comparator(input.selectedIndex) + "_" + input.value + ".gif";
   entry.querySelector("img").setAttribute("class", "portrait");
 
   entry_list.appendChild(entry);
 
   partyAdd(party, input.value, input2.value);
+}
+let comparator = function (index) {
+  let final = "";
+  if (index < 10) {
+    final = "00" + index;
+  } else if (index < 100) {
+    final = "0" + index;
+  } else {
+    final = index;
+  }
+  return final;
 }
 
 let resetter = function(input, submit) { //resets the form to onload state.
@@ -80,12 +91,13 @@ let partyAdd = function(party, a, b) { //adds newly added Pokemon to the party a
 /* On window load, the species and rank selects in the annex form will get filled. */
 let loadDex = function(list) { //loads species.
   console.log("Loaded!");
-
+  let i = 0;
   list.forEach((pokemon) => {
     let species = document.querySelector("[id='species']")
     let option = document.createElement("option")
-    option.text = pokemon.name
-    species.add(option)
+    i += 1;
+    option.text = i + ". " + pokemon.name;
+    species.add(option);
   });
 }
 
