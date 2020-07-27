@@ -54,22 +54,27 @@ let adder = function(input, input2) { //adds a Pokemon to the dex, and the party
   entry.querySelector("h3").innerText = "#"+input.selectedIndex;
   entry.querySelector("h4").innerText = "Rank: "+input2.value;
   entry.querySelector("p").innerText = input.value;
-  entry.querySelector("img").src = "images/sprites_full/" + comparator(input.selectedIndex) + "_" + input.value + ".gif";
+  entry.querySelector("img").src = "images/sprites_full/" + comparator(input.selectedIndex, input.value) + ".gif";
   entry.querySelector("img").setAttribute("class", "portrait");
 
   entry_list.appendChild(entry);
 
   partyAdd(party, input.value, input2.value);
 }
-let comparator = function (index) {
-  let final = "";
+let comparator = function (index, value) {
+  let first = "";
+  let second = "";
   if (index < 10) {
-    final = "00" + index;
+    first = "00" + index + "_";
+    second = value.substr(3); //substring trims the numbering added by loadDex.
   } else if (index < 100) {
-    final = "0" + index;
+    first = "0" + index + "_";
+    second = value.substr(4);
   } else {
-    final = index;
+    first = index + "_";
+    second = value.substr(5);
   }
+  let final = first + second;
   return final;
 }
 
