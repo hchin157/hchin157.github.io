@@ -152,11 +152,9 @@ let comparator = function (index, value) {
 let variator = function (species, gender) {
   let gendervar = "";
   let spc = comparator(species.selectedIndex, species.value).substr(4); //trims species value.
-  alert(spc)
   if (small_list.includes(spc)) {
     gendervar = gendervar + gender;
   }
-  console.log(gendervar)
   return gendervar;
 }
 
