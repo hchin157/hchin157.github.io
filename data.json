@@ -236,5 +236,17 @@
       {"name": "Darkrai"},
       {"name": "Shaymin"},
       {"name": "Arceus"},
-  ]
+  ],
+
+  "gender_variant_list": [ "Venusaur", "Starly", "Staravia", "Staraptor", "Bibarel",
+    "Kricketot", "Kricketune", "Shinx", "Luxio", "Luxray", "Kadabra", "Alakazam",
+    "Magikarp", "Gyarados", "Roselia", "Roserade", "Zubat", "Golbat", "Crobat",
+    "Steelix", "Beautifly", "Dustox", "Combee", "Pachirisu", "Heracross", "Aipom",
+    "Ambipom", "Murkrow", "Goldeen", "Seaking", "Meditite", "Medicham", "Sudowoodo",
+    "Pikachu", "Raichu", "Gible", "Gabite", "Garchomp", "Wooper", "Quagsire",
+    "Girafarig", "Hippopotas", "Hippowdon", "Croagunk", "Toxicroak", "Octillery",
+    "Finneon", "Lumineon", "Milotic", "Snover", "Abomasnow", "Sneasel", "Weavile",
+    "Gligar", "Houndoom", "Tangrowth", "Rhyhorn", "Rhydon", "Rhyperior", "Scyther",
+    "Scizor", "Piloswine", "Mamoswine",
+  ],
 }

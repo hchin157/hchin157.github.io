@@ -237,13 +237,26 @@ module.exports={
       {"name": "Darkrai"},
       {"name": "Shaymin"},
       {"name": "Arceus"},
-  ]
+  ],
+
+  "gender_variant_list": [ "Venusaur", "Starly", "Staravia", "Staraptor", "Bibarel",
+    "Kricketot", "Kricketune", "Shinx", "Luxio", "Luxray", "Kadabra", "Alakazam",
+    "Magikarp", "Gyarados", "Roselia", "Roserade", "Zubat", "Golbat", "Crobat",
+    "Steelix", "Beautifly", "Dustox", "Combee", "Pachirisu", "Heracross", "Aipom",
+    "Ambipom", "Murkrow", "Goldeen", "Seaking", "Meditite", "Medicham", "Sudowoodo",
+    "Pikachu", "Raichu", "Gible", "Gabite", "Garchomp", "Wooper", "Quagsire",
+    "Girafarig", "Hippopotas", "Hippowdon", "Croagunk", "Toxicroak", "Octillery",
+    "Finneon", "Lumineon", "Milotic", "Snover", "Abomasnow", "Sneasel", "Weavile",
+    "Gligar", "Houndoom", "Tangrowth", "Rhyhorn", "Rhydon", "Rhyperior", "Scyther",
+    "Scizor", "Piloswine", "Mamoswine",
+  ],
 }
 
 },{}],2:[function(require,module,exports){
 /* Data is stored in data.json */
 var alldata = require('./data.json')
 const full_list = alldata.full_species_list
+const small_list = alldata.gender_variant_list
 
 /* Classes */
 /*class Pokemon {
@@ -276,9 +289,9 @@ select.addEventListener('change', (event) => {
 let checker = function(input, input2, input3, submit) { //checks if a species is selected before allowing submission.
   const indexer = input.selectedIndex
 
-  let i, j = document.getElementById("gender").options.length - 1;
+  let i, j = input3.options.length - 1;
      for(i = j; i >= 0; i--) {
-        document.getElementById("gender").remove(i);
+        input3.remove(i);
      } //removes the options, if added.
 
   if (indexer != 0) {
@@ -366,7 +379,7 @@ let adder = function(input, input2, input3) { //adds a Pokemon to the dex, and t
   entry.querySelector("h4").innerText = "Rank: "+input2.value; //the rank.
   entry.querySelector("h5").innerText = "Gender: "+ input3.value; //gender.
   entry.querySelector("p").innerText = input.value;
-  entry.querySelector("img").src = "images/sprites_full/" + comparator(input.selectedIndex, input.value) + ".gif";
+  entry.querySelector("img").src = "images/sprites_full/" + comparator(input.selectedIndex, input.value) + variator(input, input3.value) + ".gif";
   entry.querySelector("img").setAttribute("class", "portrait");
 
   entry_list.appendChild(entry);
@@ -389,6 +402,17 @@ let comparator = function (index, value) {
   }
   let final = first + second;
   return final;
+}
+
+let variator = function (species, gender) {
+  let gendervar = "";
+  let spc = comparator(species.selectedIndex, species.value).substr(4); //trims species value.
+  alert(spc)
+  if (small_list.includes(spc)) {
+    gendervar = gendervar + gender;
+  }
+  console.log(gendervar)
+  return gendervar;
 }
 
 let resetter = function(input, submit) { //resets the form to onload state.
