@@ -275,6 +275,12 @@ select.addEventListener('change', (event) => {
 
 let checker = function(input, input2, input3, submit) { //checks if a species is selected before allowing submission.
   const indexer = input.selectedIndex
+
+  let i, j = document.getElementById("gender").options.length - 1;
+     for(i = j; i >= 0; i--) {
+        document.getElementById("gender").remove(i);
+     } //removes the options, if added.
+
   if (indexer != 0) {
     const x = document.querySelectorAll('.hidden'); //selects the hidden labels and select elements.
     x.forEach((item) => { item.style.display = "inline"; } ) //makes them visible.
@@ -389,11 +395,6 @@ let resetter = function(input, submit) { //resets the form to onload state.
   input[0].selected = true
   submit.disabled = true
   document.getElementById("rank")[0].selected = true //selects rank 1 on reset.
-
-  let i, j = document.getElementById("gender").options.length - 1;
-     for(i = j; i >= 0; i--) {
-        document.getElementById("gender").remove(i);
-     } //removes the options that were added.
 
   const x = document.querySelectorAll('.hidden'); //selects the visible labels and select elements.
   x.forEach((item) => { item.style.display = "none"; } ) //makes them hidden.
