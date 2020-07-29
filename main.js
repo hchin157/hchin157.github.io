@@ -26,7 +26,7 @@ const gender = document.getElementById('gender')
 const submit = document.querySelector("[type='submit']")
 const form = document.querySelector(".annex");
 
-select.addEventListener('click', (event) => {
+select.addEventListener('change', (event) => {
   checker(select, ranker, gender, submit);
 })
 
@@ -64,6 +64,7 @@ let loadGender = function(z, y) { //species, and gender select
       break; //female only
     case 'Bronzor':
     case 'Bronzong':
+    case 'Unown':
     case 'Rotom':
     case 'Magnemite':
     case 'Magneton':
