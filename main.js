@@ -15,9 +15,14 @@ const small_list = alldata.gender_variant_list
 
 /* Add entries to the "dex" div element.*/
 let entry_template = `
-  <h3></h3> <h4></h4> <h5></h5>
-  <p></p>
-  <img></img>
+  <h3></h3> <input></input> <img class='gndr'></img>
+  <img class='portrait'></img>
+`
+//an extra div for ranking not included above.
+let rank_template = `
+  <p></p> <button class='decrement'></button>
+      <span></span>
+      <button class='increment'></button>
 `
 let entry_list = document.querySelector('.dex');
 
@@ -120,16 +125,33 @@ let adder = function(input, input2, input3) { //adds a Pokemon to the dex, and t
   entry.setAttribute("class", "entry");
   entry.innerHTML = entry_template;
 
+  let name = comparator(input.selectedIndex, input.value)
+
   entry.querySelector("h3").innerText = "#"+input.selectedIndex; //the pokedex number.
-  entry.querySelector("h4").innerText = "Rank: "+input2.value; //the rank.
-  entry.querySelector("h5").innerText = "Gender: "+ input3.value; //gender.
-  entry.querySelector("p").innerText = input.value;
-  entry.querySelector("img").src = "images/sprites_full/" + comparator(input.selectedIndex, input.value) + variator(input, input3.value) + ".gif";
-  entry.querySelector("img").setAttribute("class", "portrait");
+  entry.appendChild(adderHelper(input2.value) ); //the rank.
+  //entry.querySelector("h4").innerText = "Rank: "+input2.value; //the rank.
+  entry.querySelector("input").placeholder = name.substr(4);
+  entry.querySelector("input").setAttribute("maxlength", "12");
+  entry.querySelector(".gndr").src = "images/icons/Sign_" + input3.value + ".png"; //gender.
+  entry.querySelector(".portrait").src = "images/sprites_full/" + name + variator(input, input3.value) + ".gif";
+
 
   entry_list.appendChild(entry);
 
   partyAdd(party, input.value, input2.value);
+}
+
+let adderHelper = function (actual_rank){
+  let ranking = document.createElement("div");
+  ranking.setAttribute("class", "ranking");
+  ranking.innerHTML = rank_template;
+
+  ranking.querySelector("p").innerText = "Rank: ";
+  ranking.querySelector(".decrement").innerHTML = "-";
+  ranking.querySelector("span").innerHTML = actual_rank;
+  ranking.querySelector(".increment").innerHTML = "+";
+
+  return ranking;
 }
 
 let comparator = function (index, value) {
