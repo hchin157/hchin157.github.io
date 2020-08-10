@@ -312,7 +312,6 @@ let checker = function(input, input2, input3, submit) { //checks if a species is
 let loadGender = function(z, y) { //species, and gender select
   let crude = z.value
   let species = comparator(z.selectedIndex, crude).substr(4) //just want to trim the bit before, so comparator() is used.
-  console.log(species)
   let genders = ["Male", "Female", "Genderless",]
   let final = []
   switch(species) {
