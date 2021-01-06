@@ -4,14 +4,35 @@ const full_list = alldata.full_species_list
 const small_list = alldata.gender_variant_list
 
 /* Classes */
-/*class Pokemon {
-  constructor(name, rank, health){
-    this.name = name;
-    this.rank = rank;
-    this.health = health;
-  }
-}*/
 
+class Pokemon {
+  constructor(species, rank){
+    this.species = species;
+    this.nickname = "";
+    this.rank = rank;
+  }
+}
+
+class RankEditor {
+  constructor(dec, rank, inc){
+    this.dec = dec;
+    this.rank = rank;
+    this.inc = inc;
+  }
+  minusRank(){
+    //ask: are you sure you want to decrease rank? ONLY do this if you accidentally increased the rank.
+    if (true) {
+      this.rank = this.rank - 1;
+      //update the span to reflect the rank change
+    }
+  }
+  addRank(){
+    //ask: are you sure you want to increase rank? you may do this if you have finished a rank-up event or this companion has
+    if (true) {
+      this.rank = this.rank + 1;
+    }
+  }
+}
 
 /* Add entries to the "dex" div element.*/
 let entry_template = `
