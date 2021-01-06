@@ -47,11 +47,11 @@ let rank_template = `
 `
 let entry_list = document.querySelector('.dex');
 
-const select = document.getElementById('species')
-const ranker = document.getElementById('rank')
-const gender = document.getElementById('gender')
-const submit = document.querySelector("[type='submit']")
-const form = document.querySelector(".annex");
+const select = document.getElementById('species') //the select dropdown
+const ranker = document.getElementById('rank') // the rank dropdown
+const gender = document.getElementById('gender') //the gender dropdown
+const submit = document.querySelector("[type='submit']") //the submit button
+const form = document.querySelector(".annex"); //the full form
 
 select.addEventListener('change', (event) => {
   checker(select, ranker, gender, submit);
@@ -121,7 +121,7 @@ let loadGender = function(z, y) { //species, and gender select
       break; //genderless
     default:
       final.push(genders[0])
-      final.push(genders[1])
+      final.push(genders[1]) //assuming no special cases, only add male and female options.
   }
   final.forEach((item) => {
     let option = document.createElement("option")
@@ -130,7 +130,7 @@ let loadGender = function(z, y) { //species, and gender select
   });
 }
 
-form.addEventListener('submit', (event) => {
+form.addEventListener("submit", (event) => { //will enforce a party limit of 4.
   event.preventDefault();
   if (party.length < 4) { //max party of 4.
     adder(select, ranker, gender);
@@ -146,22 +146,23 @@ let adder = function(input, input2, input3) { //adds a Pokemon to the dex, and t
   entry.innerHTML = entry_template;
 
   let name = comparator(input.selectedIndex, input.value)
+  let rank = input2.value
+  const friend = new Pokemon(name, rank)
+  partyAdd(party, friend);
 
   entry.querySelector("h3").innerText = "#"+input.selectedIndex; //the pokedex number.
-  entry.appendChild(adderHelper(input2.value) ); //the rank.
+  entry.appendChild(adderHelper(rank) ); //the rank and rank editors.
   //entry.querySelector("h4").innerText = "Rank: "+input2.value; //the rank.
   entry.querySelector("input").placeholder = name.substr(4);
   entry.querySelector("input").setAttribute("maxlength", "12");
   entry.querySelector(".gndr").src = "images/icons/Sign_" + input3.value + ".png"; //gender.
   entry.querySelector(".portrait").src = "images/sprites_full/" + name + variator(input, input3.value) + ".gif";
 
-
   entry_list.appendChild(entry);
 
-  partyAdd(party, input.value, input2.value);
 }
 
-let adderHelper = function (actual_rank){
+let adderHelper = function (actual_rank){ //handles the rank section of the dex entries.
   let ranking = document.createElement("div");
   ranking.setAttribute("class", "ranking");
   ranking.innerHTML = rank_template;
@@ -174,7 +175,7 @@ let adderHelper = function (actual_rank){
   return ranking;
 }
 
-let comparator = function (index, value) {
+let comparator = function (index, value) { //trims strings to get names.
   let first = "";
   let second = "";
   if (index < 10) {
@@ -191,7 +192,7 @@ let comparator = function (index, value) {
   return final;
 }
 
-let variator = function (species, gender) {
+let variator = function (species, gender) { //used for gender variations.
   let gendervar = "";
   let spc = comparator(species.selectedIndex, species.value).substr(4); //trims species value.
   if (small_list.includes(spc)) {
@@ -201,9 +202,9 @@ let variator = function (species, gender) {
 }
 
 let resetter = function(input, submit) { //resets the form to onload state.
-  input[0].selected = true
-  submit.disabled = true
-  document.getElementById("rank")[0].selected = true //selects rank 1 on reset.
+  input[0].selected = true;
+  submit.disabled = true;
+  document.getElementById("rank")[0].selected = true; //selects rank 1 on reset.
 
   const x = document.querySelectorAll('.hidden'); //selects the visible labels and select elements.
   x.forEach((item) => { item.style.display = "none"; } ) //makes them hidden.
@@ -213,8 +214,9 @@ let resetter = function(input, submit) { //resets the form to onload state.
 /* Dex Functions */
 const party = [];
 
-let partyAdd = function(party, a, b) { //adds newly added Pokemon to the party array.
-  party.push( {"name": a, "rank": b,/* "health": c, */})
+let partyAdd = function(party, pocketmonster) { //adds newly added Pokemon to the party array.
+  party.push( pocketmonster);
+  console.log(pocketmonster.name);
 }
 
 
